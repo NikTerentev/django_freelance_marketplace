@@ -1,0 +1,18 @@
+{% extends 'freelance_site/_base.html' %}
+
+{% block content %}
+<h1 class="text-3xl font-semibold text-center mb-16">Choose your account type:</h1>
+<div class="flex gap-10 justify-center items-center">
+    <div class="border-4 border-dashed rounded hover:border-green-600">
+        <a href="{% url 'performer-create' %}">
+            <p class="p-28 font-semibold">Исполнитель</p>
+        </a>
+    </div>
+    <p>или</p>
+    <div class="border-4 border-dashed rounded hover:border-green-600">
+        <a href="{% url 'customer-create' %}">
+            <p class="p-28 font-semibold">Заказчик</p>
+        </a>
+    </div>
+</div>
+{% endblock content %}

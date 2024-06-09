@@ -1,0 +1,23 @@
+{% extends 'freelance_site/_base.html' %}
+
+{% block title %}
+    Личный кабинет
+{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Ваш личный кабинет</h1>
+    <div>
+        {% if object.profile_pic %}
+            <img class="w-32 border rounded-full mr-4"
+                 src="{{ object.profile_pic.url }}"
+                 alt="Изображение профиля">
+        {% endif %}
+    </div>
+    <h1 class="mb-4">Имя: {{ object.name }}</h1>
+    <p class="mb-2">Телефон: <a
+            href="tel:{{ object.mobile }}">{{ object.mobile }}</a></p>
+    <p class="mb-4">Почта: <a
+            href="mailto:{{ object.email }}">{{ object.email }}</a></p>
+    <hr class="mb-4">
+    <p>Опыт работы: {{ object.experience }}</p>
+{% endblock %}

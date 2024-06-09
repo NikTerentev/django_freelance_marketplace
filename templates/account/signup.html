@@ -1,0 +1,14 @@
+{% extends 'freelance_site/_base.html' %}
+{% load tailwind_filters %}
+
+{% block content %}
+<div>
+    <h1 class="text-2xl font-bold my-4">Регистрация</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input class="px-8 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 hover:cursor-pointer" type="submit" value="Зарегистрироваться">
+    </form>
+    <p class="py-4">Уже есть аккаунт? <a class="text-blue-500 underline" href="{% url 'account_login' %}">Вход</a></p>
+</div>
+{% endblock content %}
